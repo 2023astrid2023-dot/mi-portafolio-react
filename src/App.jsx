@@ -7,7 +7,7 @@ import Inicio from './components/Inicio.jsx';
 import Perfil from './components/Perfil.jsx';
 import Logros from './components/Logros.jsx';
 import Experiencia from './components/Experiencia.jsx';
-
+import Habilidades from './components/Habilidades.jsx'; 
 function App() {
   // El único estado que controla la navegación de las pestañas
   const [seccion, setSeccion] = useState('inicio');
@@ -47,13 +47,8 @@ function App() {
         {/* CONEXIÓN REAL: Tu archivo Experiencia.jsx con tus datos reales */}
         {seccion === 'experiencia' && <Experiencia setSeccion={setSeccion} />}
 
-        {/* Marcadores simples para las secciones que nos faltan */}
-        {seccion === 'habilidades' && (
-          <div className="placeholder-container text-center animate-fade">
-            <h2 className="title-placeholder">Habilidades</h2>
-            <button onClick={() => setSeccion('inicio')} className="back-btn center">Inicio</button>
-          </div>
-        )}
+       {seccion === 'habilidades' && <Habilidades setSeccion={setSeccion} />}
+
 
         {seccion === 'contacto' && (
           <div className="placeholder-container text-center animate-fade">

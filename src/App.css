@@ -352,6 +352,53 @@
   color: var(--text-muted);
   font-family: monospace;
 }
+/* ==========================================
+   ESTILOS COMPARTIDOS PARA HABILIDADES (CÁPSULAS)
+   ========================================== */
+.habilidades-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 2.5rem auto 3.5rem;
+  max-width: 750px;
+}
 
+.skills-box-text {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1.75rem;
+  border-radius: 10px;
+  text-align: left;
+}
 
+.skills-box-text h3 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.2rem;
+  color: var(--accent-gold);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
 
+.tags-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Las cápsulas redondeadas de tus tecnologías en tu paleta Rose Gold */
+.skill-tag {
+  background-color: rgba(238, 188, 192, 0.08); /* Fondo rosa suave */
+  border: 1px solid var(--accent-pink);        /* Borde rosa viejo global */
+  color: var(--text-light);
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;                         /* Hace las cápsulas redondas */
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: var(--accent-pink);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+}
