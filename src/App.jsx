@@ -8,6 +8,7 @@ import Perfil from './components/Perfil.jsx';
 import Logros from './components/Logros.jsx';
 import Experiencia from './components/Experiencia.jsx';
 import Habilidades from './components/Habilidades.jsx'; 
+import Contacto from './components/Contacto.jsx';
 function App() {
   // El único estado que controla la navegación de las pestañas
   const [seccion, setSeccion] = useState('inicio');
@@ -18,8 +19,8 @@ function App() {
       {/* MENÚ SUPERIOR GLOBAL */}
       <header className="portfolio-header">
         <div className="header-info">
-          <h1 className="header-name">ASTRID <span className="highlight">ALONSO</span></h1>
-          <span className="header-link">Hoja de Vida Digital</span>
+          <h1 className="header-name">MI <span className="highlight">HOJA DE VIDA</span></h1>
+          <span className="header-link">Bienvenidos</span>
         </div>
         
         <nav className="portfolio-nav">
@@ -50,19 +51,14 @@ function App() {
        {seccion === 'habilidades' && <Habilidades setSeccion={setSeccion} />}
 
 
-        {seccion === 'contacto' && (
-          <div className="placeholder-container text-center animate-fade">
-            <h2 className="title-placeholder">Contacto</h2>
-            <button onClick={() => setSeccion('inicio')} className="back-btn center">Inicio</button>
-          </div>
-        )}
+        {seccion === 'contacto' && <Contacto setSeccion={setSeccion} />}
 
       </main>
 
       {/* PIE DE PÁGINA GLOBAL */}
       <footer className="portfolio-footer">
         <p className="footer-contacts">Teléfono: +57 3013680049 | Correo: 2023astrid2023@gmail.com</p>
-        <p className="footer-note">Pie de página igual para todas las secciones</p>
+        <p className="footer-note"></p>
       </footer>
 
     </div>
