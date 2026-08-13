@@ -1,13 +1,15 @@
+
 import React, { useState } from 'react';
 import './App.css';
 
-// Importamos tus tres componentes independientes y separados
+// Importamos tus componentes independientes de la carpeta components
 import Inicio from './components/Inicio.jsx';
 import Perfil from './components/Perfil.jsx';
 import Logros from './components/Logros.jsx';
+import Experiencia from './components/Experiencia.jsx';
 
 function App() {
-  // El único estado que maneja en qué sección de la guía está el usuario
+  // El único estado que controla la navegación de las pestañas
   const [seccion, setSeccion] = useState('inicio');
 
   return (
@@ -33,24 +35,19 @@ function App() {
         </nav>
       </header>
 
-      {/* CONTENIDO CENTRAL DINÁMICO */}
+      {/* CONTENIDO CENTRAL */}
       <main className="portfolio-main">
         
-        {/* Inyectamos tus archivos separados pasando la función para navegar */}
         {seccion === 'inicio' && <Inicio setSeccion={setSeccion} />}
         
         {seccion === 'perfil' && <Perfil setSeccion={setSeccion} />}
         
         {seccion === 'logros' && <Logros setSeccion={setSeccion} />}
 
-        {/* Marcadores simples de la guía para las secciones que faltan */}
-        {seccion === 'experiencia' && (
-          <div className="placeholder-container text-center animate-fade">
-            <h2 className="title-placeholder">Experiencia Laboral</h2>
-            <button onClick={() => setSeccion('inicio')} className="back-btn center">Inicio</button>
-          </div>
-        )}
+        {/* CONEXIÓN REAL: Tu archivo Experiencia.jsx con tus datos reales */}
+        {seccion === 'experiencia' && <Experiencia setSeccion={setSeccion} />}
 
+        {/* Marcadores simples para las secciones que nos faltan */}
         {seccion === 'habilidades' && (
           <div className="placeholder-container text-center animate-fade">
             <h2 className="title-placeholder">Habilidades</h2>
@@ -67,7 +64,7 @@ function App() {
 
       </main>
 
-      {/* PIE DE PÁGINA GLOBAL - Con tus datos de contacto */}
+      {/* PIE DE PÁGINA GLOBAL */}
       <footer className="portfolio-footer">
         <p className="footer-contacts">Teléfono: +57 3013680049 | Correo: 2023astrid2023@gmail.com</p>
         <p className="footer-note">Pie de página igual para todas las secciones</p>
