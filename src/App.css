@@ -1,33 +1,33 @@
-/* VARIABLES DE COLOR (TEMA OSCURO MODERNO) */
-/* VARIABLES DE COLOR: ESTILO FEMENINO ELEGANTE */
+/* ==========================================
+   VARIABLES GLOBALES (COLOR Y ESTILO ELEGANTE)
+   ========================================== */
 :root {
-  --bg-principal: #0d0b11;    /* Un negro u oscurito con un sutil toque berenjena, súper elegante */
-  --bg-tarjetas: #181420;     /* Un tono más claro para que las tarjetas resalten en la oscuridad */
-  --bg-entradas: #060508;     /* Fondo ultra oscuro para las cajas de texto */
-  --color-neon: #f4b4b8;      /* Rosa viejo / Rose Gold suave y sofisticado */
-  --color-neon-hover: #e09ba1;/* Rosa un toque más profundo para las transiciones */
-  --color-oro: #f1e1ca;       /* Tono champaña/oro para textos importantes y destellos */
-  --texto-blanco: #fcfaf2;    /* Blanco cálido/marfil, mucho más suave que el blanco puro */
-  --texto-gris: #a59fa9;      /* Gris malva para los subtítulos y textos secundarios */
-  --bordes: #251f30;          /* Líneas divisorias en sintonía con el fondo */
+  --bg-dark: #0f0d13;       /* Grafito oscuro con un sutil toque berenjena, muy fino */
+  --bg-card: #18151f;       /* Tono un poco más claro para bloques generales */
+  --accent-pink: #eebcc0;   /* Rosa viejo suave, sutil y elegante */
+  --accent-gold: #f3e5d0;   /* Tono champagne/marfil para resaltar títulos */
+  --text-light: #fcfbfa;    /* Blanco cálido que no canse la vista */
+  --text-muted: #9f9aa4;    /* Gris suave para textos secundarios */
+  --border-color: #24202e;  /* Líneas divisorias delicadas */
 }
 
+/* REGLAS GENERALES DE LA APLICACIÓN */
 .portfolio-container {
-  background-color: var(--bg-principal);
-  color: var(--texto-blanco);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   min-height: 100vh;
   font-family: 'Segoe UI', system-ui, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
-/* MENÚ SUPERIOR */
+/* ESTILOS GENERALES DEL MENÚ SUPERIOR (HEADER) */
 .portfolio-header {
   position: sticky;
   top: 0;
-  background-color: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--bordes);
+  background-color: rgba(15, 13, 19, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
   padding: 1.25rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -38,12 +38,19 @@
 .header-name {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--color-neon);
+  letter-spacing: 1px;
+  color: var(--accent-pink);
+  margin: 0;
+}
+
+.highlight {
+  color: var(--accent-gold);
 }
 
 .header-link {
-  color: var(--texto-gris);
+  color: var(--text-muted);
   font-size: 0.8rem;
+  display: block;
 }
 
 .portfolio-nav {
@@ -54,135 +61,233 @@
 .nav-btn {
   background: none;
   border: none;
-  color: var(--texto-gris);
-  padding: 0.6rem 1.2rem;
+  color: var(--text-muted);
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  text-transform: capitalize;
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.25s ease;
+  border-radius: 6px;
+  transition: all 0.2s ease;
 }
 
 .nav-btn:hover, .nav-btn.active {
-  color: var(--texto-blanco);
-  background-color: var(--bg-tarjetas);
+  color: var(--text-light);
+  background-color: var(--bg-card);
 }
 
-/* CUERPO CENTRAL */
+/* CONTENEDOR CENTRAL COMPARTIDO (MAIN) */
 .portfolio-main {
   flex: 1;
-  max-width: 1100px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
 
-/* DISEÑO DE LA PÁGINA DE INICIO */
+/* REGLAS GENERALES PARA LOS TEXTOS Y AVATARES */
+.text-center {
+  text-align: center;
+}
+/* REGLAS GENERALES PARA LOS TEXTOS Y AVATARES (CORREGIDO) */
+.profile-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 2rem;
+}
+
+/* Este es el portaretratos que encoge tu foto al tamaño de la guía */
+.profile-avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  height: 320px;          /* Altura idéntica a la de tu portada */
+  width: 280px;           /* Ancho elegante para que sea un cuadro */
+  border-radius: 8px;     /* Suaviza las esquinas como un cuadro fino */
+  overflow: hidden;       /* No deja que la foto se salga del cuadro */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  padding: 0.75rem;       /* Crea el marco interior de portarretratos */
+}
+
+/* Controla la foto de Astrid adentro del cuadro */
+.foto-avatar-real {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Ajusta tu imagen sin deformarla */
+  border-radius: 4px;
+}
+
+.profile-text {
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+
+/* BOTONES GENERALES DE REGRESO (COMO PIDE LA GUÍA) */
+.back-btn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  color: var(--text-light);
+  border-color: var(--accent-pink);
+  background-color: var(--bg-card);
+}
+
+.back-btn.center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* PIE DE PÁGINA COMPARTIDO (FOOTER) */
+.portfolio-footer {
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-contacts {
+  margin: 0 0 0.25rem 0;
+}
+
+.footer-note {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+/* COMPONENTES TEMPORALES (PLACEHOLDERS) */
+.placeholder-container {
+  padding: 4rem 2rem;
+}
+
+.title-placeholder {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ANIMACIÓN GENERAL DE ENTRADA SUAVE */
+.animate-fade {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ==========================================
+   ESTILOS COMPARTIDOS PARA EL MÓDULO DE INICIO
+   ========================================== */
 .section-inicio {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  grid-template-columns: 1.2fr 1fr; /* Divide la pantalla en dos columnas como tu guía */
+  gap: 4rem;
+  align-items: start;
+  padding-top: 1rem;
+  text-align: left;
 }
 
 .main-title {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 900;
   margin: 0 0 0.5rem 0;
   line-height: 1.1;
 }
 
-.highlight {
-  color: var(--color-neon);
-  text-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
-}
-
 .subtitle {
-  color: var(--texto-gris);
+  color: var(--text-muted);
   font-size: 1.1rem;
-  line-height: 1.6;
   margin-bottom: 2.5rem;
 }
 
-/* MATRIZ DE TARJETAS */
+.text-oro {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Grilla izquierda para los 4 botones principales */
 .grid-menu {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
-.menu-card-btn {
-  background-color: var(--bg-tarjetas);
-  border: 1px solid var(--bordes);
-  color: var(--texto-blanco);
-  padding: 1.5rem;
-  border-radius: 14px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.menu-card-btn h3 {
-  margin: 0;
+/* Botones planos y limpios en tono Rose Gold */
+.menu-card-btn-solid {
+  background-color: var(--accent-pink);
+  color: var(--bg-dark);
+  border: none;
+  padding: 1.5rem 1rem;
   font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.menu-card-btn p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: var(--texto-gris);
+.menu-card-btn-solid:hover {
+  background-color: var(--accent-gold); /* Cambia a champagne al pasar el mouse */
+  transform: translateY(-2px);
 }
 
-.menu-card-btn:hover {
-  border-color: var(--color-neon);
-  transform: translateY(-4px);
-}
-
-/* CAJA DE PRESENTACIÓN DERECHA */
-.visual-box {
-  background-color: var(--bg-tarjetas);
-  border: 1px solid var(--bordes);
-  height: 400px;
-  border-radius: 20px;
+/* Columna derecha de la portada */
+.inicio-derecha {
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* El cuadro contenedor de tu foto de portada */
+.visual-box-mockup {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  height: 320px;          /* Altura idéntica al cuadro del perfil */
+  width: 100%;
+  border-radius: 8px;     /* Esquinas suavizadas */
+  display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 0.75rem;       /* Crea el mismo marco elegante de portarretratos */
 }
 
-.visual-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+/* Fuerza a la foto de la portada a llenar su cuadro sin deformarse */
+.foto-portada-real {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.visual-text {
-  color: var(--texto-gris);
-  font-family: monospace;
+/* Botón de contacto expandido al 100% de la columna */
+.contacto-btn {
+  width: 100%;
+  padding: 1.2rem 1rem;
 }
 
-/* PIE DE PÁGINA */
-.portfolio-footer {
-  border-top: 1px solid var(--bordes);
-  padding: 1.5rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--texto-gris);
-}
-
-/* ANIMACIÓN */
-.animate-fade {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 900px) {
-  .section-inicio { grid-template-columns: 1fr; }
+/* Ajuste por si abres la página en un celular */
+@media (max-width: 850px) {
+  .section-inicio { grid-template-columns: 1fr; gap: 3rem; }
   .grid-menu { grid-template-columns: 1fr; }
 }
 

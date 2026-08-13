@@ -1,11 +1,12 @@
 import React from 'react';
+import fotoAstrid from '../foto.png';
 
-// Exportamos el componente Inicio y recibimos 'setSeccion' para que los botones cambien de pestaña
+
 export default function Inicio({ setSeccion }) {
   return (
     <section className="section-inicio animate-fade">
       
-      {/* COLUMNA IZQUIERDA: Título y las 4 tarjetas principales */}
+      {/* COLUMNA IZQUIERDA: Título de tu guía y las 4 tarjetas principales */}
       <div className="inicio-textos">
         <h2 className="main-title">
           HOJA DE VIDA <span className="highlight">DIGITAL</span>
@@ -14,7 +15,7 @@ export default function Inicio({ setSeccion }) {
           Mockup de página web personal de <span className="text-oro">Astrid Alonso</span>
         </p>
         
-        {/* Cuadrícula de acceso rápido (2 columnas, 2 filas) */}
+        {/* Matriz de botones de la izquierda (2 columnas, 2 filas) */}
         <div className="grid-menu">
           <button onClick={() => setSeccion('perfil')} className="menu-card-btn-solid">
             Perfil Profesional
@@ -31,11 +32,11 @@ export default function Inicio({ setSeccion }) {
         </div>
       </div>
 
-      {/* COLUMNA DERECHA: Recuadro de imagen + Botón de Contacto abajo */}
+      {/* COLUMNA DERECHA: Tu foto enmarcada + Botón de Contacto abajo */}
       <div className="inicio-derecha">
-        {/* Recuadro de presentación grisáceo de tu mockup */}
+        {/* El recuadro del portaretratos que calza con tu mockup */}
         <div className="visual-box-mockup">
-          <p className="upload-text">[ Recuadro de Imagen ]</p>
+          <img src={fotoAstrid} alt="Astrid Alonso" className="foto-portada-real" />
         </div>
         
         {/* Botón de contacto ubicado exactamente debajo de la foto */}
