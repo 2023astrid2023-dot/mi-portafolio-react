@@ -1,46 +1,61 @@
 import React from 'react';
 
-// Creamos el componente independiente y lo exportamos para que App.jsx lo pueda usar
+// IMPORTACIÓN: Traemos las dos fotos desde la carpeta src con el punto correcto (.)
+import fotoSena from '../logoSena.png'; 
+import fotoColegio from '../colegio.jpg';
+
 export default function Logros({ setSeccion }) {
   return (
-    <section className="section-modular-layout animate-fade">
+    <section className="animate-fade">
       
-      {/* Columna Izquierda: Tus tarjetas de estudio */}
-      <div className="modulo-contenido-izq">
-        <h2 className="section-title-left">Logros Académicos</h2>
+      {/* Título de la sección de tu guía */}
+      <h2 className="profile-title text-center">Logros Académicos</h2>
+      
+      {/* Cuadrícula organizada para alinear tus 3 tarjetas */}
+      <div className="logros-grid">
         
-        <div className="cards-stack">
-          <div className="info-card">
-            <div className="card-icon">🎓</div>
-            <div className="card-content">
-              <h3>Título Obtenido o Curso 1</h3>
-              <p className="institution">Institución Educativa / Universidad</p>
-              <span className="card-date">Año: 2026</span>
-            </div>
+        {/* Tarjeta 1: Tu Tecnólogo Actual (¡El más importante!) */}
+        <div className="logro-card">
+          <div className="logro-img-box">
+            <img src={fotoSena} alt="Logo SENA ADSO" className="logro-img" />
           </div>
-
-          <div className="info-card">
-            <div className="card-icon">📜</div>
-            <div className="card-content">
-              <h3>Certificación o Estudio 2</h3>
-              <p className="institution">Plataforma o Centro de Formación</p>
-              <span className="card-date">Año: 2025</span>
-            </div>
+          <div className="logro-info">
+            <h3>Tecnólogo en Análisis y Desarrollo de Software (Cursando)</h3>
+            <p className="inst-name">SENA (Servicio Nacional de Aprendizaje)</p>
+            <span className="inst-date">Periodo: 2026 - Presente</span>
           </div>
         </div>
 
-        {/* Usamos la función setSeccion que viene desde el archivo padre */}
-        <button onClick={() => setSeccion('inicio')} className="back-btn mt-4">
-          &larr; Volver al Inicio
-        </button>
+        {/* Tarjeta 2: Tu Técnica anterior */}
+        <div className="logro-card">
+          <div className="logro-img-box">
+            <img src={fotoSena} alt="Logo SENA RR.HH." className="logro-img" />
+          </div>
+          <div className="logro-info">
+            <h3>Técnica en Recursos Humanos</h3>
+            <p className="inst-name">SENA (Servicio Nacional de Aprendizaje)</p>
+            <span className="inst-date">Año de graduación: 2024</span>
+          </div>
+        </div>
+
+        {/* Tarjeta 3: Tu Bachillerato */}
+        <div className="logro-card">
+          <div className="logro-img-box">
+            <img src={fotoColegio} alt="Logo Colegio" className="logro-img" />
+          </div>
+          <div className="logro-info">
+            <h3>Bachiller Académico</h3>
+            <p className="inst-name">Institución Educativa Colegio Real</p>
+            <span className="inst-date">Año de graduación: 2024</span>
+          </div>
+        </div>
+
       </div>
 
-      {/* Columna Derecha: Recuadro para la foto de tus logros */}
-      <div className="modulo-visual-der">
-        <div className="visual-box-mockup">
-          <p className="upload-text">[ Imagen de Logros / Diplomas ]</p>
-        </div>
-      </div>
+      {/* EL BOTÓN DE TU GUÍA: Centrado abajo y dice textualmente "Inicio" */}
+      <button onClick={() => setSeccion('inicio')} className="back-btn center">
+        Inicio
+      </button>
 
     </section>
   );
